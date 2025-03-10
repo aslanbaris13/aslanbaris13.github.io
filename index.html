@@ -5,48 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barış Aslan - Kişisel Web Sitesi</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 40px; }
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f4; }
+        .container { max-width: 800px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); }
         header { text-align: center; }
-        section { margin-bottom: 20px; }
+        .section { margin-bottom: 20px; padding: 10px; border-radius: 5px; background: #e0e0e0; cursor: pointer; }
+        .content { display: none; padding: 10px; background: white; border-radius: 5px; }
         ul { list-style-type: none; padding: 0; }
         li { margin: 5px 0; }
     </style>
+    <script>
+        function toggleContent(id) {
+            var content = document.getElementById(id);
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
+        }
+    </script>
 </head>
 <body>
-    <header>
-        <h1>Barış Aslan</h1>
-        <h3>Bilgisayar Mühendisi</h3>
-        <p>Düzce Üniversitesi - Bilgisayar Mühendisliği 3. Sınıf | 3.41 GPA</p>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Barış Aslan</h1>
+            <h3>Bilgisayar Mühendisi</h3>
+            <p>Düzce Üniversitesi - Bilgisayar Mühendisliği 3. Sınıf | 3.41 GPA</p>
+        </header>
 
-    <section>
-        <h2>Hakkımda</h2>
-        <p>Yazılım geliştirme ve veri bilimi alanlarında kendimi sürekli geliştirmeye çalışıyorum. Python, Veri Bilimi, Makine Öğrenmesi, Yapay Zeka ve iOS geliştirme konularına özel ilgi duyuyorum.</p>
-    </section>
+        <div class="section" onclick="toggleContent('hakkimda')">Hakkımda</div>
+        <div class="content" id="hakkimda">
+            <p>Yazılım geliştirme ve veri bilimi alanlarında kendimi sürekli geliştirmeye çalışıyorum. Python, Veri Bilimi, Makine Öğrenmesi, Yapay Zeka ve iOS geliştirme konularına özel ilgi duyuyorum.</p>
+        </div>
 
-    <section>
-        <h2>Projelerim</h2>
-        <ul>
-            <li><strong>Fitness Salonu Otomasyonu:</strong> C# ile katmanlı mimari kullanarak geliştirdiğim, Access veritabanı destekli üye yönetim sistemi.</li>
-            <li><strong>Dergi-Gazete Bayi Veritabanı:</strong> MSSQL ve C# kullanarak geliştirdiğim abone ve yayın kayıt yönetim sistemi.</li>
-            <li><strong>Müşteri Algılama Sistemi:</strong> Arduino, ESP8266, HC-SR04 ve buzzer kullanarak mağaza içi müşteri takibini sağlayan sistem.</li>
-        </ul>
-    </section>
+        <div class="section" onclick="toggleContent('projeler')">Projelerim</div>
+        <div class="content" id="projeler">
+            <ul>
+                <li><strong>Fitness Salonu Otomasyonu:</strong> C# ile katmanlı mimari kullanarak geliştirdiğim, Access veritabanı destekli üye yönetim sistemi.</li>
+                <li><strong>Dergi-Gazete Bayi Veritabanı:</strong> MSSQL ve C# kullanarak geliştirdiğim abone ve yayın kayıt yönetim sistemi.</li>
+                <li><strong>Müşteri Algılama Sistemi:</strong> Arduino, ESP8266, HC-SR04 ve buzzer kullanarak mağaza içi müşteri takibini sağlayan sistem.</li>
+            </ul>
+        </div>
 
-    <section>
-        <h2>Yetenekler</h2>
-        <ul>
-            <li>Python (NumPy, Pandas, Matplotlib, Seaborn)</li>
-            <li>C# ile masaüstü uygulama geliştirme</li>
-            <li>Veritabanı Yönetimi (MSSQL, Access)</li>
-            <li>Arduino ve ESP8266 ile IoT Projeleri</li>
-        </ul>
-    </section>
+        <div class="section" onclick="toggleContent('yetenekler')">Yetenekler</div>
+        <div class="content" id="yetenekler">
+            <ul>
+                <li>Python (NumPy, Pandas, Matplotlib, Seaborn)</li>
+                <li>C# ile masaüstü uygulama geliştirme</li>
+                <li>Veritabanı Yönetimi (MSSQL, Access)</li>
+                <li>Arduino ve ESP8266 ile IoT Projeleri</li>
+            </ul>
+        </div>
 
-    <section>
-        <h2>İletişim</h2>
-        <p>Email: <a href="mailto:Aslanbaris870@gmail.com">Aslanbaris870@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/aslanbaris13" target="_blank">github.com/aslanbaris13</a></p>
-    </section>
+        <div class="section" onclick="toggleContent('iletisim')">İletişim</div>
+        <div class="content" id="iletisim">
+            <p>Email: <a href="mailto:Aslanbaris870@gmail.com">Aslanbaris870@gmail.com</a></p>
+            <p>GitHub: <a href="https://github.com/aslanbaris13" target="_blank">github.com/aslanbaris13</a></p>
+        </div>
+    </div>
 </body>
 </html>
