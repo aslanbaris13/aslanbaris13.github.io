@@ -5,92 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barış Aslan - Kişisel Web Sitesi</title>
     <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            margin: 0; 
-            background-color: #121212; 
+        /* Genel Sayfa Stili */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #141E30, #243B55); /* Modern renk geçişi */
             color: white;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
             text-align: center;
         }
-        .container { 
-            max-width: 900px; 
-            margin: auto; 
-            padding: 20px; 
-        }
+
+        /* Başlık */
         header {
+            padding: 20px;
+            text-align: center;
             font-size: 24px;
             font-weight: bold;
-            margin: 20px 0;
         }
-        .hero {
-            background: url('background.jpg') no-repeat center center/cover;
-            padding: 100px 20px;
-        }
-        .hero h1 {
-            font-size: 42px;
-            margin: 0;
-        }
-        .hero p {
-            font-size: 18px;
-        }
+
+        /* Bölüm Kartları */
         .section {
-            margin: 30px 0;
-            padding: 20px;
-            background: #1e1e1e;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            margin: 10px 0;
             border-radius: 10px;
             cursor: pointer;
+            transition: 0.3s;
         }
-        .content { 
-            display: none; 
-            padding: 10px; 
-            background: #282828; 
-            border-radius: 5px; 
+
+        .section:hover {
+            background: rgba(255, 255, 255, 0.2);
         }
-        button {
-            background: #ff5733;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            font-size: 16px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
+
+        .content {
+            display: none;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            text-align: left;
         }
-        button:hover {
-            background: #c70039;
+
+        ul {
+            list-style-type: none;
+            padding: 0;
         }
+
+        li {
+            margin: 5px 0;
+        }
+
         a {
-            color: #ff5733;
+            color: #FFDD57;
             text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
     </style>
     <script>
         function toggleContent(id) {
             var content = document.getElementById(id);
-            content.style.display = (content.style.display === "none" || content.style.display === "") ? "block" : "none";
+            if (content.style.display === "none" || content.style.display === "") {
+                content.style.display = "block";
+            } else {
+                content.style.display = "none";
+            }
         }
     </script>
 </head>
 <body>
-    <div class="hero">
-        <h1>Ben Barış Aslan</h1>
-        <p>Bilgisayar Mühendisi | Yazılım Geliştirici | Veri Bilimi Meraklısı</p>
-        <button onclick="toggleContent('hakkimda')">Beni Tanıyın</button>
-    </div>
-
     <div class="container">
+        <header>
+            <h1>Barış Aslan</h1>
+            <h3>Bilgisayar Mühendisi</h3>
+            <p>Düzce Üniversitesi - Bilgisayar Mühendisliği 3. Sınıf | 3.41 GPA</p>
+        </header>
+
         <div class="section" onclick="toggleContent('hakkimda')">Hakkımda</div>
         <div class="content" id="hakkimda">
-            <p>Düzce Üniversitesi Bilgisayar Mühendisliği 3. sınıf öğrencisiyim. Yazılım geliştirme ve veri bilimi alanlarında kendimi sürekli geliştirmeye çalışıyorum.</p>
-            <p>Python, C#, MSSQL, Arduino ve daha birçok teknolojiyle projeler üretiyorum.</p>
+            <p>Düzce Üniversitesi Bilgisayar Mühendisliği 3. sınıf öğrencisiyim. Yazılım geliştirme ve veri bilimi alanlarında kendimi sürekli geliştirmeye çalışıyorum. Özellikle Python, Veri Bilimi, Makine Öğrenmesi, Yapay Zeka ve iOS geliştirme konularına ilgi duyuyorum. Python ekosisteminde NumPy, Pandas, Matplotlib, Seaborn gibi kütüphanelerle veri analizi ve görselleştirme konularında çalışmalar yapıyorum. Aynı zamanda C# ile katmanlı mimari kullanarak masaüstü uygulamaları geliştirdim. MSSQL ve Access veritabanları ile veri yönetimi konusunda deneyimim var. Bunlara ek olarak, Arduino ve ESP8266 ile gömülü sistemler üzerine bir proje geliştirdim, donanım ve yazılım entegrasyonu konularında kendimi geliştiriyorum. Her geçen gün yeni teknolojiler öğrenerek projeler üretmeyi ve açık kaynak dünyasına katkı sağlamayı hedefliyorum.</p>
         </div>
 
-        <div class="section" onclick="toggleContent('projeler')">Projelerim</div>
+        <div class="section" onclick="toggleContent('egitim')">Eğitim</div>
+        <div class="content" id="egitim">
+            <p><strong>Düzce Üniversitesi</strong> - Bilgisayar Mühendisliği (3.41 GPA)</p>
+        </div>
+
+        <div class="section" onclick="toggleContent('deneyim')">İş Deneyimi</div>
+        <div class="content" id="deneyim">
+            <p><strong>Cella Kiosk - Mağaza Sorumlusu</strong></p>
+            <p>İletişim ve satış yeteneklerimi geliştirdiğim sorumluluklar benimsediğim bir tecrübe oldu.Bana en önemli katkıları etkili konuşma,ikna yönetimi,takım çalışması gibi yetkinlikleri kazanmış olmamdır.Ayrıca bu süreçte alanımda İstanbul içerisinde birçok satış rekorunu kırmış bulunmaktayım.</p>
+        </div>
+
+        <div class="section" onclick="toggleContent('projeler')">Projeler</div>
         <div class="content" id="projeler">
             <ul>
-                <li><b>Fitness Salonu Otomasyonu:</b> C# ve Access veritabanı kullanarak geliştirdim.</li>
-                <li><b>Dergi-Gazete Bayi Veritabanı:</b> MSSQL ve C# ile geliştirdiğim bir yönetim sistemi.</li>
-                <li><b>Müşteri Algılama Sistemi:</b> Arduino, ESP8266 ve sensörler kullanarak mağaza analiz sistemi.</li>
+                <li><strong>Fitness Salonu Otomasyonu:</strong> C# ile katmanlı mimari kullanarak geliştirdiğim, Access veritabanı destekli üye yönetim sistemi.</li>
+                <li><strong>Dergi-Gazete Bayi Veritabanı:</strong> MSSQL ve C# kullanarak geliştirdiğim abone ve yayın kayıt yönetim sistemi.</li>
+                <li><strong>Müşteri Algılama Sistemi:</strong> Arduino, ESP8266, HC-SR04 ve buzzer kullanarak mağaza içi müşteri takibini sağlayan sistem.</li>
             </ul>
         </div>
 
@@ -98,10 +117,15 @@
         <div class="content" id="yetenekler">
             <ul>
                 <li>Python (NumPy, Pandas, Matplotlib, Seaborn)</li>
-                <li>C# ile Masaüstü Uygulama Geliştirme</li>
+                <li>C# ile masaüstü uygulama geliştirme</li>
                 <li>Veritabanı Yönetimi (MSSQL, Access)</li>
                 <li>Arduino ve ESP8266 ile IoT Projeleri</li>
             </ul>
+        </div>
+
+        <div class="section" onclick="toggleContent('sertifikalar')">Sertifikalar</div>
+        <div class="content" id="sertifikalar">
+            <p>Düzce Üniversitesi İngilizce Sertifikası</p>
         </div>
 
         <div class="section" onclick="toggleContent('iletisim')">İletişim</div>
